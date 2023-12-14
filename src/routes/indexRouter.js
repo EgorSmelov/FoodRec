@@ -1,16 +1,11 @@
 import express from 'express';
+import { Dish } from '../../db/models';
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
-  const dishes = [
-    {
-      id: 1, title: 'Борщ', img: 'https://proprikol.ru/wp-content/uploads/2020/04/kartinki-borshh-21.jpg', ingridients: 20, time: 20,
-    },
-    {
-      id: 2, title: 'Пюре', img: 'https://sovkusom.ru/wp-content/uploads/blog/k/kartofelnoye-pyure/5.jpg', ingridients: 10, time: 30,
-    },
-  ];
+router.get('/', async (req, res) => {
+  const dishes = await Dish.findAll();
+  console.log(dishes);
   res.render('IndexPage', { dishes });
 });
 

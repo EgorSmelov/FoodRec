@@ -24,6 +24,7 @@ module.exports = {
     for (let i = 0; i < 20; i++) {
       const data = await getData();
       const ingredients = [];
+      const randomTimeMin = Math.floor(Math.random() * (120 - 10 + 1) + 10);
       for (let j = 1; j <= 20; j++) {
         const ingredient = data.meals[0][`strIngredient${j}`];
         if (ingredient) {
@@ -35,7 +36,7 @@ module.exports = {
         img: data.meals[0].strMealThumb,
         ingredients: ingredients.join(', '),
         instruction: data.meals[0].strInstructions,
-        time: 1,
+        time: randomTimeMin,
       };
       dishArr.push(objDish);
     }
