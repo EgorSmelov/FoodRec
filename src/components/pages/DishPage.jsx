@@ -1,10 +1,10 @@
 import React from 'react';
 import DishPageForm from '../ui/DishPageForm';
 
-export default function DishPage({ dish }) {
+export default function DishPage({ oneDish }) {
   return (
     <div className="container">
-      <DishPageForm dish={dish} />
+      <DishPageForm oneDish={oneDish} />
     </div>
   );
 }
