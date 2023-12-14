@@ -6,10 +6,11 @@ import 'dotenv/config';
 import jsxRender from './utils/jsxRender';
 import indexRouter from './routes/render/indexRouter';
 import apiAuthRouter from './routes/api/apiAuthRouter';
-import apiRouter from './routes/api/apiRouter';
 import authRouter from './routes/render/authRouter';
 import resLocals from './middlewares/resLocals';
 import dishRouter from './routes/render/dishRouter';
+import apiLikesRouter from './routes/api/apiLikesRouter';
+import apiSortRouter from './routes/api/apiSortRouter';
 
 const PORT = process.env.PORT || 3000;
 const app = express();
@@ -26,8 +27,9 @@ app.use(cookieParser());
 app.use(resLocals);
 
 app.use('/api/auth', apiAuthRouter);
+app.use('/api/likes/', apiLikesRouter);
+app.use('/api/sorts/', apiSortRouter);
 app.use('/auth', authRouter);
-app.use('/api', apiRouter);
 app.use('/dishes', dishRouter);
 app.use('/', indexRouter);
 

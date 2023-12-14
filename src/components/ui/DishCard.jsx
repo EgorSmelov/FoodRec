@@ -1,7 +1,17 @@
 import React, { useState } from 'react';
 
-export default function DishCard({ dish }) {
-  const [isLike, setLikeCheck] = useState(false);
+export default function DishCard({ dish, user, like }) {
+  const [isLike, setIsLike] = useState(like);
+  async function likeRules() {
+    if (isLike) {
+      const response = await fetch(`/api/likes/${user.id}/${dish.id}`, { method: 'DELETE' });
+      response.status === 200 ? setIsLike(false) : setIsLike(null);
+    }
+    if (!isLike) {
+      const response = await fetch(`/api/likes/${user.id}/${dish.id}`, { method: 'POST' });
+      response.status === 200 ? setIsLike(true) : setIsLike(null);
+    }
+  }
 
   return (
     <div className="card">
@@ -20,7 +30,13 @@ export default function DishCard({ dish }) {
           {' '}
           {`${dish.time} минут`}
         </div>
-        <button type="button" className="btn btn-primary" onClick={() => setLikeCheck(!isLike)}>{isLike ? 'Like' : 'Dislike'}</button>
+        {user
+          ? (
+            <button onClick={() => likeRules()} type="button" className="btn btn-primary">
+              {!isLike ? 'Добавить в избранное' : 'Удалить из избранного'}
+            </button>
+          )
+          : null}
       </div>
     </div>
   );
