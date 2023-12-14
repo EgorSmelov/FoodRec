@@ -1,13 +1,15 @@
 import express from 'express';
+import { Dish } from '../../db/models';
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
-  res.json({ hello: 'world' });
-});
-
-router.get('/sortTimeAZ', (req, res) => {
-  res.json({ hello: 'world' });
+router.get('/:NameType', async (req, res) => {
+  const [name, typeSort] = req.params.NameType.split(',');
+  const sortDishes = await Dish.findAll({
+    order: [
+      [name, typeSort]],
+  });
+  res.json(sortDishes);
 });
 
 router.get('/sortTimeZA', (req, res) => {

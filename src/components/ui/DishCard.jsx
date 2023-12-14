@@ -7,18 +7,18 @@ export default function DishCard({ dish }) {
     <div className="card">
       <img src={dish.img} className="card-img-top" style={{ width: '300px' }} />
       <div className="card-body">
-        <h5><a href={`/dishes/${dish.id}`}>{dish.title}</a></h5>
+        <h3><a href={`/dishes/${dish.id}`}>{dish.name}</a></h3>
       </div>
       <div className="card-body">
         <div>
           Ингридиенты:
           {' '}
-          {dish.ingridients}
+          {dish.ingredients.split(', ').length}
         </div>
         <div>
-          Время:
+          Готовить:
           {' '}
-          {dish.time}
+          {`${dish.time} минут`}
         </div>
         <button type="button" className="btn btn-primary" onClick={() => setLikeCheck(!isLike)}>{isLike ? 'Like' : 'Dislike'}</button>
       </div>

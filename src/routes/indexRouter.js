@@ -5,7 +5,6 @@ const router = express.Router();
 
 router.get('/', async (req, res) => {
   const dishes = await Dish.findAll();
-  console.log(dishes);
   res.render('IndexPage', { dishes });
 });
 
