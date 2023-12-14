@@ -1,11 +1,11 @@
 import express from 'express';
 import { Dish } from '../../db/models';
 
-const router = express.Router();
+const indexRouter = express.Router();
 
-router.get('/', async (req, res) => {
+indexRouter.get('/', async (req, res) => {
   const dishes = await Dish.findAll();
   res.render('IndexPage', { dishes });
 });
 
-export default router;
+export default indexRouter;
