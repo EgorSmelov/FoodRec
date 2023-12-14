@@ -4,12 +4,12 @@ import path from 'path';
 import cookieParser from 'cookie-parser';
 import 'dotenv/config';
 import jsxRender from './utils/jsxRender';
-import indexRouter from './routes/indexRouter';
+import indexRouter from './routes/render/indexRouter';
 import apiAuthRouter from './routes/api/apiAuthRouter';
-import apiRouter from './routes/apiRouter';
-import authRouter from './routes/authRouter';
+import apiRouter from './routes/api/apiRouter';
+import authRouter from './routes/render/authRouter';
 import resLocals from './middlewares/resLocals';
-import dishRouter from './routes/dishRouter';
+import dishRouter from './routes/render/dishRouter';
 
 const PORT = process.env.PORT || 3000;
 const app = express();
