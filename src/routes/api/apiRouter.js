@@ -1,5 +1,5 @@
 import express from 'express';
-import { Dish } from '../../db/models';
+import { Dish } from '../../../db/models';
 
 const router = express.Router();
 

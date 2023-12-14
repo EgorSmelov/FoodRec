@@ -1,6 +1,6 @@
 import express from 'express';
-import checkAuthRedirect from '../middlewares/checkAuthRedirect';
-import { verifyAccessToken } from '../middlewares/verifyTokens';
+import checkAuthRedirect from '../../middlewares/checkAuthRedirect';
+import { verifyAccessToken } from '../../middlewares/verifyTokens';
 
 const authRouter = express.Router();
 
