@@ -1,13 +1,17 @@
 import React from 'react';
 
-export default function DishPageForm({ dish }) {
+export default function DishPageForm({ oneDish }) {
   return (
     <div className="card mb-3">
-      <img src={dish.img} className="card-img-top" alt={dish.name} />
+      <img src={oneDish.img} className="card-img-top" alt={oneDish.name} />
       <div className="card-body">
-        <h5 className="card-title">{dish.name}</h5>
-        <p className="card-text">{dish.}</p>
-        <p className="card-text"><small className="text-body-secondary">{dish.time}</small></p>
+        <h2 className="card-title">{oneDish.name}</h2>
+        <h3>Ingredients:</h3>
+        <p className="card-text">{oneDish.ingredients}</p>
+        <h3>Instruction:</h3>
+        <p className="card-text">{oneDish.instruction}</p>
+        <h3>Cooking time:</h3>
+        <p className="card-text"><small className="text-body-secondary">{oneDish.time}</small></p>
       </div>
     </div>
   );

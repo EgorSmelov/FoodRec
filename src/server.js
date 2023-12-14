@@ -5,8 +5,11 @@ import cookieParser from 'cookie-parser';
 import 'dotenv/config';
 import jsxRender from './utils/jsxRender';
 import indexRouter from './routes/indexRouter';
+import apiAuthRouter from './routes/api/apiAuthRouter';
 import apiRouter from './routes/apiRouter';
+import authRouter from './routes/authRouter';
 import resLocals from './middlewares/resLocals';
+import dishRouter from './routes/dishRouter';
 
 const PORT = process.env.PORT || 3000;
 const app = express();
@@ -22,7 +25,10 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(resLocals);
 
-app.use('/', indexRouter);
+app.use('/api/auth', apiAuthRouter);
+app.use('/auth', authRouter);
 app.use('/api', apiRouter);
+app.use('/dishes', dishRouter);
+app.use('/', indexRouter);
 
 app.listen(PORT, () => console.log(`App has started on port ${PORT}`));
