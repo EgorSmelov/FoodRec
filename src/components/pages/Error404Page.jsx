@@ -2,6 +2,6 @@ import React from 'react';
 
 export default function Error404Page() {
   return (
-    <div>404Page</div>
+    <div><img src="/images/404.svg" /></div>
   );
 }
