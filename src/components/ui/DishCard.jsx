@@ -16,7 +16,7 @@ export default function DishCard({ dish, user, like }) {
   return (
     <div className="col">
       <div className="card">
-        <img src={dish.img} className="card-img-top" style={{ width: '100%' }} />
+        <img src={dish.img} className="card-img-top" style={{ width: '100%' }} alt={dish.name} />
         <div className="card-body">
           <h3><a href={`/dishes/${dish.id}`}>{dish.name}</a></h3>
         </div>
