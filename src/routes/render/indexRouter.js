@@ -1,11 +1,13 @@
 import express from 'express';
-import { Dish, User } from '../../../db/models';
+import { Dish, User, sequelize } from '../../../db/models';
 
 const indexRouter = express.Router();
 
 indexRouter.get('/', async (req, res) => {
   try {
-    const dishes = await Dish.findAll();
+    const dishes = await Dish.findAll({
+      order: sequelize.random(),
+    });
 
     let likesId;
     if (res.locals.user) {

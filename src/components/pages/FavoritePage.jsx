@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import DishCard from '../ui/DishCard';
 
-export default function IndexPage({ dishes, likesId, user }) {
+export default function FavoritePage({ dishes, likesId, user }) {
   const [dishesArr, setDishesArr] = useState(dishes);
 
   const handleChange = async (event) => {
-    const response = await fetch(`/api/sorts/main/${event.target.value}`, { method: 'GET' }).then((data) => data.json());
+    const response = await fetch(`/api/sorts/favorite/${event.target.value}`, { method: 'GET' }).then((data) => data.json());
     setDishesArr(response);
   };
   return (
