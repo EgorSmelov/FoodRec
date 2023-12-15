@@ -47,7 +47,10 @@ export default function RegistrationPage() {
 
   return (
     <>
-      <h1>Регистрация</h1>
+      <br />
+      <br />
+      <br />
+      <h2>Регистрация</h2>
       <form onSubmit={handleSubmit}>
         {/* <div className="mb-3">
           <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
