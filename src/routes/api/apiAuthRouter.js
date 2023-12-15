@@ -61,7 +61,7 @@ apiAuthRouter.post('/login', async (req, res) => {
       .sendStatus(200);
   } catch (e) {
     console.error(e);
-    res.sendStatus(500);
+    res.status(400);
   }
 });
 
