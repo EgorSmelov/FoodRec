@@ -12,6 +12,7 @@ import dishRouter from './routes/render/dishRouter';
 import apiLikesRouter from './routes/api/apiLikesRouter';
 import apiSortRouter from './routes/api/apiSortRouter';
 import apiPagesRouter from './routes/api/apiPagesRouter';
+import dishFavoriteRouter from './routes/render/dishFavoriteRouter';
 
 const PORT = process.env.PORT || 3000;
 const app = express();
@@ -34,6 +35,7 @@ app.use('/api/sorts/', apiSortRouter);
 app.use('/api/pages/', apiPagesRouter);
 app.use('/auth', authRouter);
 app.use('/dishes', dishRouter);
+app.use('/favorites', dishFavoriteRouter);
 app.use('/', indexRouter);
 
 app.listen(PORT, () => console.log(`App has started on port ${PORT}`));

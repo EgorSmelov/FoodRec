@@ -27,7 +27,7 @@ export default function DishCard({ dish, user, like }) {
         </div>
         <div className="card-body card-values">
           <div className="card-items">
-            Ингридиенты:
+            Ингредиенты:
             {' '}
             {dish.ingredients.split(', ').length}
           </div>

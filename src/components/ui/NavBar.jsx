@@ -29,6 +29,9 @@ export default function NavBar({ user }) {
                       <a className="nav-link" href="/auth/profile">Профиль</a>
                     </li>
                     <li className="nav-item">
+                      <a className="nav-link" href="/favorites">Избранное</a>
+                    </li>
+                    <li className="nav-item">
                       <a className="nav-link" href="/auth/logout">Выйти</a>
                     </li>
                   </>
