@@ -14,7 +14,8 @@ export default function IndexPage({ dishes, likesId, user }) {
       <br />
       <br />
       <div>
-        <select className="form-select w-25" aria-label="Default select example" onChange={handleChange} name="sort" defaultValue="">
+        <select className="form-select w-25" aria-label="Default select example" onChange={handleChange} name="sort">
+          <option selected disabled hidden>Сортировка</option>
           <option value="defaultAsc">По умолчанию</option>
           <option value="timeAsc">Время готовки ↑</option>
           <option value="timeDesc">Время готовки ↓</option>
