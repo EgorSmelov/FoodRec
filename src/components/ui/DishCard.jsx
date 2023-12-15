@@ -20,11 +20,7 @@ export default function DishCard({ dish, user, like }) {
       <div className="card">
         <div className="imgCard">
           <img src={dish.img} className="card-img-top" style={{ width: '100%' }} />
-          {/* {user
-            ? ( */}
           <img className="favoriteImg" onClick={() => likeRules()} src={!isLike ? '/images/likeOff.svg' : '/images/likeOn.svg'} />
-          {/* // )
-            // : null} */}
         </div>
         <div className="card-body">
           <h3><a href={`/dishes/${dish.id}`}>{dish.name}</a></h3>
