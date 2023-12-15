@@ -18,6 +18,12 @@
     padding: 0px 16px
   }
 
+  .card-group {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+
 /* Карточка */
 
 /* ------ */

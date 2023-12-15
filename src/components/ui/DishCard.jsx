@@ -14,29 +14,31 @@ export default function DishCard({ dish, user, like }) {
   }
 
   return (
-    <div className="card">
-      <img src={dish.img} className="card-img-top" style={{ width: '300px' }} />
-      <div className="card-body">
-        <h3><a href={`/dishes/${dish.id}`}>{dish.name}</a></h3>
-      </div>
-      <div className="card-body">
-        <div>
-          Ингридиенты:
-          {' '}
-          {dish.ingredients.split(', ').length}
+    <div className="col">
+      <div className="card">
+        <img src={dish.img} className="card-img-top" style={{ width: '100%' }} />
+        <div className="card-body">
+          <h3><a href={`/dishes/${dish.id}`}>{dish.name}</a></h3>
         </div>
-        <div>
-          Готовить:
-          {' '}
-          {`${dish.time} минут`}
+        <div className="card-body">
+          <div>
+            Ингридиенты:
+            {' '}
+            {dish.ingredients.split(', ').length}
+          </div>
+          <div>
+            Готовить:
+            {' '}
+            {`${dish.time} минут`}
+          </div>
+          {user
+            ? (
+              <button onClick={() => likeRules()} type="button" className="btn btn-primary">
+                {!isLike ? 'Добавить в избранное' : 'Удалить из избранного'}
+              </button>
+            )
+            : null}
         </div>
-        {user
-          ? (
-            <button onClick={() => likeRules()} type="button" className="btn btn-primary">
-              {!isLike ? 'Добавить в избранное' : 'Удалить из избранного'}
-            </button>
-          )
-          : null}
       </div>
     </div>
   );
