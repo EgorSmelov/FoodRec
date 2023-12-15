@@ -22,9 +22,17 @@
     width: 100%;
     display: flex;
     justify-content: space-around;
+    top: 12px;
   }
 
 /* Карточка */
 
+.favoriteImg {
+  width: 50px;
+  height: auto;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
 /* ------ */
   
