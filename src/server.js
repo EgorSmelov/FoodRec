@@ -11,6 +11,7 @@ import resLocals from './middlewares/resLocals';
 import dishRouter from './routes/render/dishRouter';
 import apiLikesRouter from './routes/api/apiLikesRouter';
 import apiSortRouter from './routes/api/apiSortRouter';
+import apiPagesRouter from './routes/api/apiPagesRouter';
 
 const PORT = process.env.PORT || 3000;
 const app = express();
@@ -29,6 +30,7 @@ app.use(resLocals);
 app.use('/api/auth', apiAuthRouter);
 app.use('/api/likes/', apiLikesRouter);
 app.use('/api/sorts/', apiSortRouter);
+app.use('/api/pages/', apiPagesRouter);
 app.use('/auth', authRouter);
 app.use('/dishes', dishRouter);
 app.use('/', indexRouter);
