@@ -4,7 +4,7 @@ import { Dish, User } from '../../../db/models';
 const indexRouter = express.Router();
 
 indexRouter.get('/', async (req, res) => {
-  const dishes = await Dish.findAll({ offset: 0, limit: 9 });
+  const dishes = await Dish.findAll();
 
   let likesId;
   if (res.locals.user) {
