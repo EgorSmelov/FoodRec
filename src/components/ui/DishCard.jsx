@@ -17,7 +17,7 @@ export default function DishCard({ dish, user, like }) {
 
   return (
     <div className="col">
-      <div className="card">
+      <div className="card card-animation">
         <div className="imgCard">
           <a href={`/dishes/${dish.id}`}><img src={dish.img} className="card-img-top" style={{ width: '100%' }} /></a>
           <img className="favoriteImg" onClick={() => likeRules()} src={!isLike ? '/images/favoriteOff.svg' : '/images/favoriteOn.svg'} />
@@ -27,7 +27,7 @@ export default function DishCard({ dish, user, like }) {
         </div>
         <div className="card-body card-values">
           <div className="card-items">
-            Ингридиенты:
+            Ингредиенты:
             {' '}
             {dish.ingredients.split(', ').length}
           </div>

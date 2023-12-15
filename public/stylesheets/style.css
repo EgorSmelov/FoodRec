@@ -34,25 +34,17 @@
   right: 5px;
   top: 5px;
 }
-
-.card-values {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.card-items {
-width: 50%;
-}
 /* ------ */
 
-@media (max-width: 1200px) {
-  .card-values {
-    flex-direction: column;
-  }
-
-  .card-items {
-    width: 100%;
-    }
+.card {
+  transition: transform 0.3s ease;
 }
+
+.card-animation:hover {
+  transform: scale(1.03);
+  box-shadow: 5px 5px 10px #888888;
+  background-color: lightgrey;
+  
+}
+
   
