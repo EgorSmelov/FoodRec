@@ -1,4 +1,4 @@
-import { TodoList } from '../../db/models';
+import { Dish } from '../../db/models';
 
 const checkAuthor = async (req, res, next) => {
   const { id } = req.params;
