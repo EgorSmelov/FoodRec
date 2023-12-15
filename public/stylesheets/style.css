@@ -35,4 +35,16 @@
   top: 5px;
 }
 /* ------ */
+
+.card {
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.1);
+  box-shadow: 5px 5px 10px #888888;
+  background-color: lightgrey;
+  transform: scale(1.1) rotate(5deg);
+}
+
   
