@@ -1,11 +1,11 @@
 import express from 'express';
-import { Dish } from '../../../db/models';
+import { Dish, User } from '../../../db/models';
 
 const apiSortRouter = express.Router();
 
-apiSortRouter.get('/:NameType', async (req, res) => {
+apiSortRouter.get('/:sortType', async (req, res) => {
   try {
-    const typeSort = req.params.NameType;
+    const typeSort = req.params.sortType;
     let sortDishes;
 
     switch (typeSort) {
@@ -23,6 +23,15 @@ apiSortRouter.get('/:NameType', async (req, res) => {
         });
         break;
 
+      case 'favourites':
+        sortDishes = await Dish.findAll({
+          include: [{
+            model: User,
+            required: true,
+          }],
+        });
+        break;
+
       case 'ingridientsAsc':
         const dataAsc = await Dish.findAll();
         sortDishes = dataAsc.sort((a, b) => a.ingredients.split(',').length - b.ingredients.split(',').length);
@@ -34,7 +43,10 @@ apiSortRouter.get('/:NameType', async (req, res) => {
         break;
 
       default:
-        '';
+        sortDishes = await Dish.findAll({
+          order: [
+            ['id', 'ASC']],
+        });
     }
 
     res.status(200).json(sortDishes);
