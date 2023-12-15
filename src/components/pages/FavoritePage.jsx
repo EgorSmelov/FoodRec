@@ -19,8 +19,8 @@ export default function FavoritePage({ dishes, likesId, user }) {
           <option value="defaultAsc">По умолчанию</option>
           <option value="timeAsc">Время готовки ↑</option>
           <option value="timeDesc">Время готовки ↓</option>
-          <option value="ingridientsAsc">Кол-во ингидиентов ↑</option>
-          <option value="ingridientsDesc">Кол-во ингидиентов ↓</option>
+          <option value="ingridientsAsc">Кол-во ингредиентов ↑</option>
+          <option value="ingridientsDesc">Кол-во ингредиентов ↓</option>
         </select>
       </div>
       <br />
