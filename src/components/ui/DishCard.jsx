@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 export default function DishCard({ dish, user, like }) {
   const [isLike, setIsLike] = useState(like);
   async function likeRules() {
-    if (!user) return alert('Чтобы добавлять в избранное нужно зарегистрироваться');
+    if (!user) return alert('Чтобы добавлять в избранное нужно войти или зарегистрироваться');
 
     if (isLike) {
       const response = await fetch(`/api/likes/${user.id}/${dish.id}`, { method: 'DELETE' });
@@ -20,21 +20,21 @@ export default function DishCard({ dish, user, like }) {
       <div className="card">
         <div className="imgCard">
           <a href={`/dishes/${dish.id}`}><img src={dish.img} className="card-img-top" style={{ width: '100%' }} /></a>
-          <img className="favoriteImg" onClick={() => likeRules()} src={!isLike ? '/images/likeOff.svg' : '/images/likeOn.svg'} />
+          <img className="favoriteImg" onClick={() => likeRules()} src={!isLike ? '/images/favoriteOff.svg' : '/images/favoriteOn.svg'} />
         </div>
-        <div className="card-body">
-          <h3><a href={`/dishes/${dish.id}`}>{dish.name}</a></h3>
+        <div className="card-body" style={{ height: '100px' }}>
+          <h3><a className="link-body-emphasis link-offset-2 link-underline link-underline-opacity-0" href={`/dishes/${dish.id}`}>{dish.name}</a></h3>
         </div>
-        <div className="card-body">
-          <div>
+        <div className="card-body card-values">
+          <div className="card-items">
             Ингридиенты:
             {' '}
             {dish.ingredients.split(', ').length}
           </div>
-          <div>
+          <div className="card-items">
             Готовить:
             {' '}
-            {`${dish.time} минут`}
+            {`${dish.time} мин.`}
           </div>
         </div>
       </div>
