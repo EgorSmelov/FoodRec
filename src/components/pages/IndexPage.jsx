@@ -1,18 +1,8 @@
 import React, { useState } from 'react';
 import DishCard from '../ui/DishCard';
-import NavBar from '../ui/NavBar';
 
 export default function IndexPage({ dishes, likesId, user }) {
   const [dishesArr, setDishesArr] = useState(dishes);
-  // const [pages, setPages] = useState(9);
-
-  // const changePage = async () => {
-  //   setPages(pages + 9);
-  //   console.log(pages);
-  //   const response = await fetch(`/api/pages/${pages}`, { method: 'GET' });
-  //   const data = await response.json();
-  //   setDishesArr(data.dishes);
-  // };
 
   const handleChange = async (event) => {
     const response = await fetch(`/api/sorts/${event.target.value}`, { method: 'GET' }).then((data) => data.json());
@@ -24,7 +14,7 @@ export default function IndexPage({ dishes, likesId, user }) {
       <br />
       <br />
       <div>
-        <select onChange={handleChange} name="sort" defaultValue="">
+        <select className="form-select w-25" aria-label="Default select example" onChange={handleChange} name="sort" defaultValue="">
           <option value="defaultAsc">По умолчанию</option>
           <option value="timeAsc">Время готовки ↑</option>
           <option value="timeDesc">Время готовки ↓</option>
@@ -39,10 +29,6 @@ export default function IndexPage({ dishes, likesId, user }) {
           <DishCard key={dish.id} dish={dish} user={user} like={likesId.includes(dish.id)} />
         ))}
       </div>
-      <br />
-      {/* <div style={{ textAlign: 'center' }}>
-        <button type="button" className="btn btn-primary" onClick={() => changePage()}>Показать ещё</button>
-      </div> */}
       <br />
     </>
   );

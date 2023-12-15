@@ -26,8 +26,8 @@ apiSortRouter.get('/:sortType', async (req, res) => {
       case 'favourites':
         sortDishes = await Dish.findAll({
           include: [{
-            model: User,
-            required: true,
+            model: User, // Specify the table to join
+            where: { id: res.locals.user.id }, // Specify the condition for the join
           }],
         });
         break;
