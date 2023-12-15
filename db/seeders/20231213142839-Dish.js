@@ -21,11 +21,10 @@ module.exports = {
         name: data.meals[0].strMeal,
         img: data.meals[0].strMealThumb,
         ingredients: ingredients.join(', '),
-<<<<<<< HEAD
+
         instruction: data.meals[0].strInstructions,
         time: randomTimeMin,
 
->>>>>>> 7a058a7
       };
       dishArr.push(objDish);
     }
