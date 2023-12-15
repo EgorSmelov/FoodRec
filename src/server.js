@@ -16,8 +16,9 @@ import apiPagesRouter from './routes/api/apiPagesRouter';
 const PORT = process.env.PORT || 3000;
 const app = express();
 
-app.engine('jsx', jsxRender);
-app.set('view engine', 'jsx');
+const extension = process.env.NODE_ENV === 'production' ? 'js' : 'jsx';
+app.engine(extension, jsxRender);
+app.set('view engine', extension);
 app.set('views', path.join(__dirname, 'components', 'pages'));
 
 app.use(express.static('public'));
