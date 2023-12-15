@@ -18,7 +18,10 @@ export default function LoginPage() {
 
   return (
     <>
-      <h1>Войдите в аккаунт</h1>
+      <br />
+      <br />
+      <br />
+      <h2>Войдите в аккаунт</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>

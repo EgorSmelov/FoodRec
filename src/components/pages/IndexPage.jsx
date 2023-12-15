@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import DishCard from '../ui/DishCard';
+import NavBar from '../ui/NavBar';
 
 export default function IndexPage({ dishes, likesId, user }) {
   const [dishesArr, setDishesArr] = useState(dishes);
@@ -19,6 +20,8 @@ export default function IndexPage({ dishes, likesId, user }) {
   };
   return (
     <>
+      <br />
+      <br />
       <br />
       <div>
         <select onChange={handleChange} name="sort" defaultValue="">
