@@ -12,4 +12,4 @@
 <br/>
 
 - SSR
-- Стэк: 
+- Стэк: JavaScript, NodeJS, React, Bootstrap, Express, PostgreSQL, JWT
